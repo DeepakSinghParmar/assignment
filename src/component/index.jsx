@@ -24,14 +24,14 @@ export default () => {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/assignment" element={<Login />} />
           <Route
-            path="/home"
-            element={isAuth ? <Home /> : <Navigate to="/" replace />}
+            path="/assignment/home"
+            element={isAuth ? <Home /> : <Navigate to="/assignment" replace />}
           />
           <Route
-            path="/add-resources"
-            element={isAuth ? <AddResources /> : <Navigate to="/" replace />}
+            path="/assignment/add-resources"
+            element={isAuth ? <AddResources /> : <Navigate to="/assignment" replace />}
           />
           <Route path="*" element={<h1>No found page</h1>} />
         </Routes>

@@ -19,7 +19,7 @@ export default () => {
     if (isAuth && isAuth.length > 120) {
       setLoading(false);
       fetchAlldata(dispatch);
-      navigate("/home");
+      navigate("/assignment/home");
     } else {
       setLoading(false);
     }
@@ -47,7 +47,8 @@ export default () => {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
       );
 
-      window.location.replace("/home");
+      window.location.href = "/assignment/home";
+      // navigate("/assignment/home")
     } else {
       setErrors(errors);
     }

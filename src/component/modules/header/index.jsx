@@ -7,7 +7,7 @@ const ProfilePopup = ({ onClose }) => {
 
   const handleLogout = () => {
     sessionStorage.removeItem("accessToken");
-    navigate("/");
+    navigate("/assignment");
   };
 
   return (
@@ -43,7 +43,7 @@ export default () => {
   };
 
   const clickAddButton = () => {
-    navigate("/add-resources");
+    navigate("/assignment/add-resources");
   };
 
   return (
@@ -53,7 +53,7 @@ export default () => {
           <img src={logo} alt="Logo" />
         </div>
         <div className="header_right">
-          {window.location.pathname === "/home" ? (
+          {window.location.pathname === "/assignment/home" ? (
             <button onClick={clickAddButton} className="add-button">
               + ADD
             </button>
