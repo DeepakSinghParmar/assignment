@@ -10,5 +10,4 @@ export const fetchAlldata = async (dispatch) => {
     dispatch(addAll({ data: response?.data }));
   }
 
-  console.log("all data", response, dispatch);
 };

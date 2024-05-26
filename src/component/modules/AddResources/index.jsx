@@ -78,7 +78,7 @@ export default () => {
         .then((res) => {
           if(res.status === 200){
             dispatch(addNewData({ data: formData }));
-            toast.success("Resource is created success fully", {
+            toast.success("Resource is created successfully.", {
               position: "bottom-center",
               autoClose: 1000,
               hideProgressBar: true,
