@@ -10,7 +10,6 @@ export default () => {
   const cardsPerPage = 6;
   const allData = useAlldata();
 
-
   // this useEffect run when re-rendered the component when change in allData ( data in redux )
   useEffect(() => {
     setRenderDataList(allData);
@@ -21,7 +20,8 @@ export default () => {
   }, [activeTag]);
 
   const totalPages = Math.ceil(
-    renderDatalist?.filter((itm) => itm?.tag === activeTag).length / cardsPerPage
+    renderDatalist?.filter((itm) => itm?.tag === activeTag).length /
+      cardsPerPage
   );
 
   const paginate = (pageNumber) => {
@@ -59,6 +59,7 @@ export default () => {
 
         <div className="gridContainer">
           <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
             <input
               onChange={(e) => onInputChangs(e)}
               type="text"
@@ -66,28 +67,32 @@ export default () => {
             />
           </div>
 
-          <div class="grid">
-            {renderPaginationData?.map((item, index) => {
-              return (
-                <div class="card" key={index}>
-                  <div className="card-header">
-                    <div class="card-logo">
-                      <img src={item?.icon_url || ""} />
+          {renderPaginationData?.length ? (
+            <div class="grid">
+              {renderPaginationData?.map((item, index) => {
+                return (
+                  <div class="card" key={index}>
+                    <div className="card-header">
+                      <div class="card-logo">
+                        <img src={item?.icon_url} />
+                      </div>
+                      <div className="card-title">
+                        <h3>{item?.title}</h3>
+                        <h5>{item?.category}</h5>
+                      </div>
                     </div>
-                    <div className="card-title">
-                      <h3>{item?.title}</h3>
-                      <h5>{item?.category}</h5>
-                    </div>
-                  </div>
 
-                  <div class="card-content">
-                    <p class="link">{item?.link}</p>
-                    <p class="description">{item?.description}</p>
+                    <div class="card-content">
+                      <p class="link">{item?.link}</p>
+                      <p class="description">{item?.description}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div>No data to display</div>
+          )}
 
           <div>
             {totalPages > 1 && (

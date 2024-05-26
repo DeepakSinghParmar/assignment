@@ -55,7 +55,7 @@ export default () => {
         <div className="header_right">
           {window.location.pathname === "/assignment/home" ? (
             <button onClick={clickAddButton} className="add-button">
-              + ADD
+              ADD ITEM
             </button>
           ) : (
             <div></div>

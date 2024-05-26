@@ -7,5 +7,5 @@ import add_resource from './img/png/add_resource.png'
 export {
     logo,
     profile_img,
-    add_resource
-}
+    add_resource,
+    }

@@ -8,20 +8,21 @@
     justify-content: center;
     display: flex;
     flex: 1;
+    
+    .back-link {
+      margin-bottom: 20px;
+      position: absolute;
+      left: 40px;
+      top: 90px; 
+      color: #858585;
+      cursor: pointer;
+    }
 
     .form-container {
         width: 60%;
         margin-top: 90px;
       
-        .back-link {
-          margin-bottom: 20px;
-        }
-      
-        .back-link a {
-          text-decoration: none;
-          color: #333;
-          font-weight: bold;
-        }
+        
       
         h1 {
           font-size: 2rem;
@@ -36,6 +37,7 @@
         label {
           font-weight: bold;
           margin-bottom: 5px;
+          color: gray;
         }
       
         input,
@@ -44,8 +46,14 @@
           margin-bottom: 20px;
           padding: 10px;
           font-size: 1rem;
-          border: 1px solid #ddd;
+          border: 2px solid #d6d6d6;
           border-radius: 5px;
+        }
+
+        input,
+        select,
+        textarea:focus{
+          outline: none;
         }
 
       
@@ -62,6 +70,7 @@
           border: none;
           border-radius: 5px;
           cursor: pointer;
+          width: 120px;
           transition: background-color 0.3s ease;
         }
       
